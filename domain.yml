@@ -1,0 +1,57 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thanks
+  - bot_challenge
+  - faq
+  - emotional_faq
+
+actions:
+  - utter_greet
+  - utter_further_help
+  - utter_great
+  - utter_goodbye
+  - utter_iamabot
+  - utter_thanks
+  - respond_faq
+  - respond_emotional_faq
+  - utter_service
+  - utter_emotional_support
+  - utter_support
+
+responses:
+  utter_greet:
+  - text: "¡Hola! Mi nombre es Yanay. Soy un asistente virtual diseñado para brindar primeros auxilios psicológicos."
+
+  utter_further_help:
+  - text: "¿Puedo ayudarte en alguna otra cosa?"
+
+  utter_great:
+  - text: "Me alegro. Recuerda que puedes escribirme cuando lo necesites."
+
+  utter_thanks:
+  - text: "De nada. Estoy para servirte."
+
+  utter_goodbye:
+  - text: "¡Qué tengas un buen día!"
+
+  utter_iamabot:
+  - text: "Soy un bot, creado por Renato y Josselyn."
+  
+  utter_service:
+  - text: "¿En qué puedo ayudarte?"
+
+  utter_emotional_support:
+  - text: "Es muy natural sentirte así en estos momentos."
+
+  utter_support:
+  - text: "Entiendo."
+
+  utter_give_name:
+  - text: "Encantada de conocerte"
+     
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

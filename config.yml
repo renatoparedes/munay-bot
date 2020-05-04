@@ -1,0 +1,49 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: es
+pipeline:
+- name: "SpacyNLP"
+- name: "SpacyTokenizer"
+  # Flag to check whether to split intents
+  "intent_tokenization_flag": False
+  # Symbol on which intent should be split
+  "intent_split_symbol": "_"
+- name: "CountVectorsFeaturizer"
+- name: LexicalSyntacticFeaturizer
+  features: [
+    ["low", "title", "upper"],
+    [
+      "BOS",
+      "EOS",
+      "low",
+      "prefix5",
+      "prefix2",
+      "suffix5",
+      "suffix3",
+      "suffix2",
+      "upper",
+      "title",
+      "digit",
+    ],
+    ["low", "title", "upper"],
+  ]
+- name: DIETClassifier
+  number_of_transformer_layers: 0 
+  hidden_layers_sizes:
+      text: [256, 128]
+  weight_sparsity: 0
+  intent_classification: True
+  entity_recognition: False
+  use_masked_language_model: False
+  BILOU_flag: False
+  batch_size: 64
+  epochs: 1500
+- name: "ResponseSelector"
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MappingPolicy  
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+  
