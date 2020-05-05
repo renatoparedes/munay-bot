@@ -9,4 +9,4 @@ RUN python3 -m spacy download es_core_news_md
 RUN python3 -m spacy link es_core_news_md es
 RUN rasa train
 
-ENTRYPOINT [ "rasa", "run", "-p", "8080", "--enable-api", "--cors", "--debug" ]
+ENTRYPOINT [ "rasa", "run", "-p", "8080", "--enable-api", "--cors", "*", "--debug" ]
