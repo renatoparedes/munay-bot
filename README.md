@@ -3,6 +3,8 @@ Prototipo preliminar de chatbot para la intervención psicológica en crisis con
 
 Requiere previamente haber ejecutado los siguientes comandos:
 
+```
 pip install rasa[spacy]
 python -m spacy download es_core_news_md
 python -m spacy link es_core_news_md es
+```
