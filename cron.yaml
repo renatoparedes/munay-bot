@@ -1,0 +1,4 @@
+cron:
+- description: "daily update"
+  url: /serverupdate.sh
+  schedule: every day 20:05
